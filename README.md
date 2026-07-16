@@ -1,34 +1,39 @@
-\# Danny AI Labs
+# Danny AI Lab
 
+Danny AI Lab es la plataforma matriz para productos SaaS multiempresa y automatizaciones especializadas. Comparte infraestructura sin mezclar la lógica de negocio de cada producto.
 
+## Productos
 
-Plataforma matriz para productos SaaS y automatizaciones.
+- **Olive Rentals:** producto actual para disponibilidad de rentas.
+- **Olive Dispatch:** futuro.
+- **Olive Landscaping:** futuro.
 
+## Estructura del monorepo
 
+- `apps/`: aplicaciones desplegables y lógica de producto.
+- `packages/`: componentes compartidos futuros.
+- `infrastructure/`: configuración de infraestructura.
+- `docs/`: documentación operativa y de seguridad.
+- `scripts/`: validación y despliegue seguro.
 
-\## Productos
+## Documentación
 
+- [Arquitectura](ARCHITECTURE.md)
+- [Despliegue](docs/DEPLOYMENT.md)
+- [Seguridad](docs/SECURITY.md)
 
+## Uso
 
-\- Olive Rentals
+Validación local, desde la raíz del repositorio:
 
-\- Olive Dispatch — futuro
+```bash
+bash scripts/check-all.sh
+```
 
-\- Olive Landscaping — futuro
+Despliegue desde EC2, después de publicar los cambios en GitHub:
 
+```bash
+bash scripts/deploy-olive-rentals.sh
+```
 
-
-\## Estructura
-
-
-
-\- `apps/`: productos ejecutables.
-
-\- `packages/`: componentes compartidos.
-
-\- `infrastructure/`: configuración de servidores y despliegues.
-
-\- `docs/`: documentación general.
-
-\- `scripts/`: automatizaciones de desarrollo y despliegue.
-
+No se debe desplegar desde el equipo local ni con cambios sin commit en EC2.
